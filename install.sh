@@ -6,7 +6,7 @@ wget -O /root/Pictures/wallpaper.jpeg https://www.hbo.com/content/dam/hbodata/se
 wget -O /root/Pictures/lockscreen.jpeg https://wallpapercave.com/download/parrot-security-os-wallpapers-wp2071865
 
 wget -q -O - https://archive.kali.org/archive-key.asc  | apt-key add
-apt-get upgrade && apt-get update
+apt-get upgrade -y && apt-get update -y
 
 # APACHE CONFIG
 # DISABLE DIRECTORY BROWSING
@@ -26,7 +26,7 @@ mkdir /opt/shells
 mkdir /opt/privesc
 
 # APT PACKAGES
-apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole -y
+apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev -y
 
 
 # PIP PACKAGES
@@ -226,8 +226,13 @@ cd sqliv && chmod +x setup.py && chmod +x sqliv.py && python setup.py -i
 # sqliv --help
 cd ..
 
+
+
+
 # EXIFTOOL
 tar -xzf Image-ExifTool-10.75.tar.gz
 cd Image-ExifTool-10.75
 cp -r exiftool lib /usr/local/bin
 # exiftool path_to_image
+
+
