@@ -2,11 +2,15 @@
 
 chown -R www-data:www-data /var/www/html
 
+wget -O /root/Pictures/wallpaper.jpeg https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/episodes/7/iced-key-art/got_s7_ka.jpg/_jcr_content/renditions/cq5dam.web.1200.675.jpeg 
+wget -O /root/Pictures/lockscreen.jpeg https://wallpapercave.com/download/parrot-security-os-wallpapers-wp2071865
+
 wget -q -O - https://archive.kali.org/archive-key.asc  | apt-key add
 apt-get upgrade && apt-get update
 
 # APACHE CONFIG
-a2dismod autoindex #DISABLE DIRECTORY BROWSING
+# DISABLE DIRECTORY BROWSING
+a2dismod autoindex -f
 systemctl apache2 restart
 
 # ENABLE BLUETOOTH
@@ -22,22 +26,54 @@ mkdir /opt/shells
 mkdir /opt/privesc
 
 # APT PACKAGES
-apt-get install terminator -y
-apt-get install seclists -y
-apt-get install ipcalc -y
-apt install python3-pip -y
-apt-get install masscan -y
-apt-get install bettercap -y
-apt-get install php-curl -y
-apt-get install php-xml -y
-apt-get install inspy -y
+apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole -y
+
 
 # PIP PACKAGES
+pip install shodan urlparse2
+pip2 install pybluez pwn scapy
 pip3 install raccoon-scanner
-pip install shodan
+
 
 # GIT PACKAGES
+# ---------------------
+#      RECON
+git clone https://github.com/xillwillx/skiptracer.git /opt/recon
+git clone https://github.com/leebaird/discover.git /opt/recon
+git clone https://github.com/UnaPibaGeek/ctfr.git /opt/recon
+git clone https://github.com/Tuhinshubhra/RED_HAWK /opt/recon
+git clone https://github.com/1N3/Sn1per.git /opt/recon
+git clone https://github.com/LionSec/xerosploit.git /opt/recon
+git clone https://github.com/laramies/theHarvester.git /opt/recon
+git clone https://github.com/graniet/operative-framework.git /opt/recon
+git clone https://github.com/KyxRecon/Infoga.git /opt/recon
+git clone https://github.com/joker25000/DZGEN.git /opt/recon
 
+#      WIRELESS
+git clone https://github.com/derv82/wifite2.git /opt/wireless
+git clone https://github.com/FluxionNetwork/fluxion.git /opt/wireless
+git clone https://github.com/v1s1t0r1sh3r3/airgeddon.git /opt/wireless
+git clone https://github.com/wifiphisher/wifiphisher.git /opt/wireless
+git clone https://github.com/wifiphisher/roguehostapd.git /opt/wireless
+git clone https://github.com/ArmisSecurity/blueborne.git /opt/wireless
+git clone https://github.com/Alfa100001/-CVE-2017-0785-BlueBorne-PoC.git /opt/wireless
+git clone https://github.com/ZerBea/hcxdumptool.git /opt/wireless
+git clone https://github.com/ZerBea/hcxtools.git /opt/wireless
+
+#      WEB
+git clone https://github.com/elceef/dnstwist.git /opt/web
+git clone https://github.com/thelinuxchoice/blackeye.git /opt/web
+git clone https://github.com/UltimateHackers/Striker.git /opt/web
+git clone https://github.com/Hadesy2k/sqliv.git /opt/web
+
+#      EXPLOIT
+git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit.git /opt/exploit
+git clone https://github.com/pasahitz/zirikatu.git /opt/exploit
+
+#      OTHER
+git clone https://github.com/Mebus/cupp.git /opt
+https://github.com/CoreSecurity/impacket.git /opt
+wget https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz /opt
 
 
 #http://0xc0ffee.io/blog/OSCP-Goldmine
@@ -46,164 +82,100 @@ pip install shodan
 #linuxprivcheck.py - python3 https://github.com/swarley7/linuxprivchecker
 #php reverse shell - http://pentestmonkey.net/tools/web-shells/php-reverse-shell
 
-
-
 cd recon
-
-
 # SKIPTRACER
-git clone https://github.com/xillwillx/skiptracer.git
 cd skiptracer && chmod +x skiptracer.py
 pip install -r requirements.txt
 #python skiptracer.py
 cd ..
 
-
-# DISCOVER
-git clone https://github.com/leebaird/discover.git
-
-
 # CTFR
-git clone https://github.com/UnaPibaGeek/ctfr.git
 cd ctfr && chmod +x ctfr.py
 pip3 install -r requirements.txt
 #python3 ctfr.py
 cd ..
 
-
-# RED_HAWK
-git clone https://github.com/Tuhinshubhra/RED_HAWK
-# php rhawk.php
-cd ..
-
-
 # SN1PER
-git clone https://github.com/1N3/Sn1per.git
 cd Sn1per && chmod +x install.sh
 # ./install.sh
 cd ..
 
-
 # XEROSPLOIT
-git clone https://github.com/LionSec/xerosploit.git
 cd xerosploit && chmod +x install.py
 python install.py
 # ./xerosploit
 cd ..
 
-
 # HARVESTER
-git clone https://github.com/laramies/theHarvester.git
+
 cd theHarvester && chmod +x theHarvester.py
 # ./theHarvester.py
 cd ..
 
-
 # OPERATIVE-FRAMEWORK
-git clone https://github.com/graniet/operative-framework.git
 cd operative-framework && chmod +x operative.py
 pip install -r requirements.txt
 # ./operative.py
 cd ..
 
-
-# PHOTON
-git clone https://github.com/s0md3v/Photon.git
-cd Photon && chmod +x photon.py
-pip install -r requirements.txt
-# python photon.py -u [domain] -l 3 -t 100 --wayback
-cd ..
-
-
-
-# INSPY
-# inspy --empspy /usr/share/inspy/wordlists/title-list-large.txt google
-
-
-
 # INFOGA
-git clone https://github.com/KyxRecon/Infoga.git
 cd Infoga 
 pip install -r required.txt
-# may have to pip install urlparse2
+
 #./infoga.py
 cd ..
 
 # DZGEN
-git clone https://github.com/joker25000/DZGEN.git
+
 cd DZGEN && chmod +x DZGEN
 # ./DZGEN
 
-
-# V3N0M-SCANNER
-git clone https://github.com/v3n0m-Scanner/V3n0M-Scanner.git
-apt-get install python3-dev 
-apt-get install python-dev
-cd v3n0m-Scanner && chmod +x setup.py
-python3 setup.py install --user
-cd src && chmod +x v3n0m.py
-# python3 v3n0m.py
-cd ..
-cd ..
 
 
 cd wireless
 
 #hcxdumptool
-git clone https://github.com/ZerBea/hcxdumptool.git
+
+cd hcxdumptool
 make
 make install
+cd ..
 
 #hcxpcaptool
-git clone https://github.com/ZerBea/hcxtools
-apt-get install libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev
+
+cd hcxtools
 make
 make install
-
-
-#WIFITE2
-git clone https://github.com/derv82/wifite2.git
-cd wifite2
-# python Wifite.py
+cd ..
 
 
 # FLUXION
-git clone https://github.com/FluxionNetwork/fluxion.git 
 cd fluxion && chmod +x fluxion.sh
 # ./fluxion.sh
 cd ..
 
-
 # AIRGEDDON
-git clone https://github.com/v1s1t0r1sh3r3/airgeddon.git
 cd airgeddon && chmod +x airgeddon.sh
 # ./airgeddon.sh
 cd ..
 
 
 # WIFIPHISHER
-git clone https://github.com/wifiphisher/wifiphisher.git
 cd wifiphisher && chmod +x setup.py
 # python setup.py install
 cd ..
 
 # ROGUEHOSTAPD
-https://github.com/wifiphisher/roguehostapd
-cd roguehostapd
-python setup.py install
+cd roguehostapd && python setup.py install
 cd ..
 
 
 # BLUEBORNE
-git clone https://github.com/ArmisSecurity/blueborne.git
-apt-get install libbluetooth-dev
-pip2 install pybluez pwn scapy
 export PYTHONPATH=$PYTHONPATH:/tools/blueborne
 cd ..
 
 
 # BLUEBORNE MEMORY DUMP POC
-git clone https://github.com/Alfa100001/-CVE-2017-0785-BlueBorne-PoC.git
 mv -CVE-2017-0785-BlueBorne-PoC CVE-2017-0785-BlueBorne
 cd CVE-2017-0785-BlueBorne && chmod +x CVE-2017-0785.py
 # python2 CVE-2017-0785.py TARGET=BLUETOOTH_MAC
@@ -227,7 +199,6 @@ cd exploit
 #AUTOSPLOIT
 
 # ZIRIKATU
-git clone https://github.com/pasahitz/zirikatu.git
 cd zirikatu && chmod +x zirikatu.sh
 apt-get install mono-complete
 pip2 install mcs
@@ -236,52 +207,27 @@ cd ..
 
 
 # ETERNALBLUE-DOUBLEPULSAR-METASPLOIT
-git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit.git
+
 cd ..
 
 cd ..
 
 cd web
 
-#DNSTWIST
-https://github.com/elceef/dnstwist.git
-
-
-#BLACKEYE
-git clone https://github.com/thelinuxchoice/blackeye.git
-
-#GHOSTPHISHER
 
 # STRIKER
-git clone https://github.com/UltimateHackers/Striker.git
-cd Striker && chmod +x striker.py
-pip install -r requirements.txt 
+cd Striker && chmod +x striker.py && pip install -r requirements.txt 
 # ./striker.py
 cd ..
 
-# THE MOLE
-apt-get install themole
 
 # SQLiv
-git clone https://github.com/Hadesy2k/sqliv.git
-cd sqliv
-cd sqliv && chmod +x setup.py && chmod +x sqliv.py
-# python setup.py -i
+cd sqliv && chmod +x setup.py && chmod +x sqliv.py && python setup.py -i
 # sqliv --help
 cd ..
 
-
-# CUPP
-git clone https://github.com/Mebus/cupp.git
-
-
 # EXIFTOOL
-wget https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz
 tar -xzf Image-ExifTool-10.75.tar.gz
 cd Image-ExifTool-10.75
 cp -r exiftool lib /usr/local/bin
 # exiftool path_to_image
-	
-
-# IMPACKET
-https://github.com/CoreSecurity/impacket.git
