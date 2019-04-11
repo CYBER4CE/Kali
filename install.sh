@@ -26,28 +26,17 @@ mkdir /opt/shells
 mkdir /opt/privesc
 
 # APT PACKAGES
-apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev -y
+apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev mono-complete -y
 
 
 # PIP PACKAGES
 pip install shodan urlparse2
-pip2 install pybluez pwn scapy
+pip2 install pybluez pwn scapy mcs
 pip3 install raccoon-scanner
 
 
 # GIT PACKAGES
 # ---------------------
-#      RECON
-git clone https://github.com/xillwillx/skiptracer.git /opt/recon/skiptracer
-git clone https://github.com/leebaird/discover.git /opt/recon/discover
-git clone https://github.com/UnaPibaGeek/ctfr.git /opt/recon/ctfr
-git clone https://github.com/Tuhinshubhra/RED_HAWK /opt/recon/redhawk
-git clone https://github.com/1N3/Sn1per.git /opt/recon/sniper
-git clone https://github.com/LionSec/xerosploit.git /opt/recon/xerosploit
-git clone https://github.com/laramies/theHarvester.git /opt/recon/harvester
-git clone https://github.com/graniet/operative-framework.git /opt/recon/operative-framework
-git clone https://github.com/KyxRecon/Infoga.git /opt/recon/infoga
-git clone https://github.com/joker25000/DZGEN.git /opt/recon/dzgen
 
 #      WIRELESS
 git clone https://github.com/derv82/wifite2.git /opt/wireless/wifite2
@@ -60,131 +49,97 @@ git clone https://github.com/Alfa100001/-CVE-2017-0785-BlueBorne-PoC.git /opt/wi
 git clone https://github.com/ZerBea/hcxdumptool.git /opt/wireless/hcxdumptool
 git clone https://github.com/ZerBea/hcxtools.git /opt/wireless/hcxtools
 
+#      RECON
+git clone https://github.com/xillwillx/skiptracer.git /opt/recon/skiptracer
+git clone https://github.com/leebaird/discover.git /opt/recon/discover
+git clone https://github.com/UnaPibaGeek/ctfr.git /opt/recon/ctfr
+git clone https://github.com/Tuhinshubhra/RED_HAWK /opt/recon/redhawk
+git clone https://github.com/1N3/Sn1per.git /opt/recon/sniper
+git clone https://github.com/LionSec/xerosploit.git /opt/recon/xerosploit
+git clone https://github.com/laramies/theHarvester.git /opt/recon/harvester
+git clone https://github.com/graniet/operative-framework.git /opt/recon/operative-framework
+git clone https://github.com/KyxRecon/Infoga.git /opt/recon/infoga
+git clone https://github.com/joker25000/DZGEN.git /opt/recon/dzgen
+
+#      EXPLOIT
+git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit.git /opt/exploit/eternalblue
+git clone https://github.com/pasahitz/zirikatu.git /opt/exploit/zirikatu
+
 #      WEB
 git clone https://github.com/elceef/dnstwist.git /opt/web/dnstwist
 git clone https://github.com/thelinuxchoice/blackeye.git /opt/web/blackeye
 git clone https://github.com/UltimateHackers/Striker.git /opt/web/striker
 git clone https://github.com/Hadesy2k/sqliv.git /opt/web/sqliv
 
-#      EXPLOIT
-git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit.git /opt/exploit/eternalblue
-git clone https://github.com/pasahitz/zirikatu.git /opt/exploit/zirikatu
+#      ENUMERATION
+git clone https://github.com/rebootuser/LinEnum.git /opt/enumeration/LinEnum
+wget -O /opt/enumeration/LinuxPrivChecker http://www.securitysift.com/download/linuxprivchecker.py
+
+#      SHELLS
+wget -O /opt/shells/php http://pentestmonkey.net/tools/php-reverse-shell/php-reverse-shell-1.0.tar.gz
 
 #      OTHER
 git clone https://github.com/Mebus/cupp.git /opt/cupp	
-https://github.com/CoreSecurity/impacket.git /opt/impacket
-wget https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz /opt/exiftool
+git clone https://github.com/CoreSecurity/impacket.git /opt/impacket
+wget -O /opt/exiftool https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz
 
 
-#http://0xc0ffee.io/blog/OSCP-Goldmine
-#LinEnum.sh - https://netsec.ws/?p=309
-#linuxprivcheck.py - python2 https://netsec.ws/?p=309
-#linuxprivcheck.py - python3 https://github.com/swarley7/linuxprivchecker
-#php reverse shell - http://pentestmonkey.net/tools/web-shells/php-reverse-shell
-
-cd recon
-# SKIPTRACER
-cd skiptracer && chmod +x skiptracer.py
-pip install -r requirements.txt
-#python skiptracer.py
-cd ..
-
-# CTFR
-cd ctfr && chmod +x ctfr.py
-pip3 install -r requirements.txt
-#python3 ctfr.py
-cd ..
-
-# SN1PER
-cd Sn1per && chmod +x install.sh
-# ./install.sh
-cd ..
-
-# XEROSPLOIT
-cd xerosploit && chmod +x install.py
-python install.py
-# ./xerosploit
-cd ..
-
-# HARVESTER
-
-cd theHarvester && chmod +x theHarvester.py
-# ./theHarvester.py
-cd ..
-
-# OPERATIVE-FRAMEWORK
-cd operative-framework && chmod +x operative.py
-pip install -r requirements.txt
-# ./operative.py
-cd ..
-
-# INFOGA
-cd Infoga 
-pip install -r required.txt
-
-#./infoga.py
-cd ..
-
-# DZGEN
-
-cd DZGEN && chmod +x DZGEN
-# ./DZGEN
-
-
-
-cd wireless
+# INSTALL
+# -----------------------
 
 #hcxdumptool
-
-cd hcxdumptool
+cd /opt/wireless/hcxdumptool
 make
 make install
-cd ..
 
 #hcxpcaptool
 
-cd hcxtools
+cd /opt/wireless/hcxtools
 make
 make install
-cd ..
-
 
 # FLUXION
-cd fluxion && chmod +x fluxion.sh
+cd /opt/wireless/fluxion && chmod +x fluxion.sh && ./fluxion.sh
 # ./fluxion.sh
-cd ..
 
 # AIRGEDDON
-cd airgeddon && chmod +x airgeddon.sh
-# ./airgeddon.sh
-cd ..
-
+cd /opt/wireless/airgeddon && chmod +x airgeddon.sh && ./airgeddon.sh
 
 # WIFIPHISHER
-cd wifiphisher && chmod +x setup.py
-# python setup.py install
-cd ..
+cd /opt/wireless/wifiphisher && chmod +x setup.py && python setup.py install
 
 # ROGUEHOSTAPD
-cd roguehostapd && python setup.py install
-cd ..
+cd /opt/wireless/roguehostapd && chmod +x setup.py && python setup.py install
 
 
-# BLUEBORNE
-export PYTHONPATH=$PYTHONPATH:/tools/blueborne
-cd ..
+# SKIPTRACER
+cd /opt/recon/skiptracer && chmod +x skiptracer.py && pip install -r requirements.txt
+
+# CTFR
+cd opt/recon/ctfr && chmod +x ctfr.py && pip3 install -r requirements.txt
+
+# SN1PER
+cd opt/recon/sniper && chmod +x install.sh && ./install.sh
+
+# XEROSPLOIT
+cd opt/recon/xerosploit && chmod +x install.py && python install.py
+
+# HARVESTER
+cd opt/recon/harvester && chmod +x theHarvester.py && ./theHarvester.py
+
+# OPERATIVE-FRAMEWORK
+cd opt/recon/operative-framework && chmod +x operative.py && pip install -r requirements.txt
+
+# INFOGA
+cd opt/recon/infoga && pip install -r required.txt && ./infoga.py
+
+# DZGEN
+cd opt/recon/dzgen && chmod +x DZGEN && ./DZGEN
 
 
-# BLUEBORNE MEMORY DUMP POC
-mv -CVE-2017-0785-BlueBorne-PoC CVE-2017-0785-BlueBorne
-cd CVE-2017-0785-BlueBorne && chmod +x CVE-2017-0785.py
-# python2 CVE-2017-0785.py TARGET=BLUETOOTH_MAC
-cd ..
+cd /opt/exploit
 
-
-cd exploit
-
-# KOADIC
+#KOADIC
 #UNICORN
 #EMPIRE
 #DKMC
@@ -199,40 +154,21 @@ cd exploit
 #AUTOSPLOIT
 
 # ZIRIKATU
-cd zirikatu && chmod +x zirikatu.sh
-apt-get install mono-complete
-pip2 install mcs
-# ./zirikatu.sh
-cd ..
+cd /opt/exploit/zirikatu && chmod +x zirikatu.sh && ./zirikatu.sh
+
 
 
 # ETERNALBLUE-DOUBLEPULSAR-METASPLOIT
 
-cd ..
-
-cd ..
-
-cd web
-
-
 # STRIKER
-cd Striker && chmod +x striker.py && pip install -r requirements.txt 
-# ./striker.py
-cd ..
-
+cd /opt/web/striker && chmod +x striker.py && pip install -r requirements.txt 
 
 # SQLiv
-cd sqliv && chmod +x setup.py && chmod +x sqliv.py && python setup.py -i
+cd /opt/web/sqliv && chmod +x setup.py && chmod +x sqliv.py && python setup.py -i
 # sqliv --help
-cd ..
-
-
 
 
 # EXIFTOOL
-tar -xzf Image-ExifTool-10.75.tar.gz
+cd /opt/exiftool && tar -xzf Image-ExifTool-10.75.tar.gz
 cd Image-ExifTool-10.75
 cp -r exiftool lib /usr/local/bin
-# exiftool path_to_image
-
-
