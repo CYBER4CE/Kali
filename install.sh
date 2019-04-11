@@ -23,11 +23,14 @@ mkdir /opt/exploit
 mkdir /opt/web
 mkdir /opt/enumeration
 mkdir /opt/shells
+mkdir /opt/shells/php
 mkdir /opt/privesc
+mkdir /opt/enumeration/LinuxPrivChecker
+mkdir /opt/enumeration/LinuxPrivChecker
+mkdir /opt/exiftool
 
 # APT PACKAGES
 apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev mono-complete -y
-
 
 # PIP PACKAGES
 pip install shodan urlparse2
@@ -73,15 +76,15 @@ git clone https://github.com/Hadesy2k/sqliv.git /opt/web/sqliv
 
 #      ENUMERATION
 git clone https://github.com/rebootuser/LinEnum.git /opt/enumeration/LinEnum
-wget -O /opt/enumeration/LinuxPrivChecker http://www.securitysift.com/download/linuxprivchecker.py
+wget -O /opt/enumeration/LinuxPrivChecker/linuxprivchecker.py http://www.securitysift.com/download/linuxprivchecker.py
 
 #      SHELLS
-wget -O /opt/shells/php http://pentestmonkey.net/tools/php-reverse-shell/php-reverse-shell-1.0.tar.gz
+wget -O /opt/shells/php/php-reverse-shell-1.0.tar.gz http://pentestmonkey.net/tools/php-reverse-shell/php-reverse-shell-1.0.tar.gz
 
 #      OTHER
 git clone https://github.com/Mebus/cupp.git /opt/cupp	
 git clone https://github.com/CoreSecurity/impacket.git /opt/impacket
-wget -O /opt/exiftool https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz
+wget -O /opt/exiftool/mage-ExifTool-10.75.tar.gz https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz
 
 
 # INSTALL
