@@ -102,7 +102,7 @@ make
 make install
 
 # FLUXION
-cd /opt/wireless/fluxion && chmod +x fluxion.sh && ./fluxion.sh
+cd /opt/wireless/fluxion && chmod +x fluxion.sh && ./fluxion.sh -i
 # ./fluxion.sh
 
 # AIRGEDDON
