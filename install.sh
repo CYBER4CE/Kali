@@ -5,6 +5,8 @@ chown -R www-data:www-data /var/www/html
 wget -O /root/Pictures/wallpaper.jpeg https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/episodes/7/iced-key-art/got_s7_ka.jpg/_jcr_content/renditions/cq5dam.web.1200.675.jpeg 
 wget -O /root/Pictures/lockscreen.jpeg https://wallpapercave.com/download/parrot-security-os-wallpapers-wp2071865
 
+echo deb http://http.kali.org/kali kali-rolling main non-free contrib > /etc/apt/sources.list
+
 wget -q -O - https://archive.kali.org/archive-key.asc  | apt-key add
 apt-get upgrade -y && apt-get update -y
 
@@ -30,7 +32,7 @@ mkdir /opt/enumeration/LinuxPrivChecker
 mkdir /opt/exiftool
 
 # APT PACKAGES
-apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev mono-complete -y
+apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev mono-complete mdk4 hostapd-wpe python3-pip -y
 
 # PIP PACKAGES
 pip install shodan urlparse2
@@ -108,36 +110,35 @@ cd /opt/wireless/fluxion && chmod +x fluxion.sh && ./fluxion.sh -i
 # AIRGEDDON
 cd /opt/wireless/airgeddon && chmod +x airgeddon.sh && ./airgeddon.sh
 
-# WIFIPHISHER
-cd /opt/wireless/wifiphisher && chmod +x setup.py && python setup.py install
-
 # ROGUEHOSTAPD
 cd /opt/wireless/roguehostapd && chmod +x setup.py && python setup.py install
 
+# WIFIPHISHER
+cd /opt/wireless/wifiphisher && chmod +x setup.py && python setup.py install
 
 # SKIPTRACER
 cd /opt/recon/skiptracer && chmod +x skiptracer.py && pip install -r requirements.txt
 
 # CTFR
-cd opt/recon/ctfr && chmod +x ctfr.py && pip3 install -r requirements.txt
+cd /opt/recon/ctfr && chmod +x ctfr.py && pip3 install -r requirements.txt
 
 # SN1PER
-cd opt/recon/sniper && chmod +x install.sh && ./install.sh
+cd /opt/recon/sniper && chmod +x install.sh && ./install.sh
 
 # XEROSPLOIT
 cd opt/recon/xerosploit && chmod +x install.py && python install.py
 
 # HARVESTER
-cd opt/recon/harvester && chmod +x theHarvester.py && ./theHarvester.py
+cd /opt/recon/harvester && chmod +x theHarvester.py && ./theHarvester.py
 
 # OPERATIVE-FRAMEWORK
-cd opt/recon/operative-framework && chmod +x operative.py && pip install -r requirements.txt
+cd /opt/recon/operative-framework && chmod +x operative.py && pip install -r requirements.txt
 
 # INFOGA
-cd opt/recon/infoga && pip install -r required.txt && ./infoga.py
+cd /opt/recon/infoga && pip install -r required.txt && ./infoga.py
 
 # DZGEN
-cd opt/recon/dzgen && chmod +x DZGEN && ./DZGEN
+cd /opt/recon/dzgen && chmod +x DZGEN && ./DZGEN
 
 
 cd /opt/exploit
