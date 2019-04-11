@@ -38,42 +38,42 @@ pip3 install raccoon-scanner
 # GIT PACKAGES
 # ---------------------
 #      RECON
-git clone https://github.com/xillwillx/skiptracer.git /opt/recon
-git clone https://github.com/leebaird/discover.git /opt/recon
-git clone https://github.com/UnaPibaGeek/ctfr.git /opt/recon
-git clone https://github.com/Tuhinshubhra/RED_HAWK /opt/recon
-git clone https://github.com/1N3/Sn1per.git /opt/recon
-git clone https://github.com/LionSec/xerosploit.git /opt/recon
-git clone https://github.com/laramies/theHarvester.git /opt/recon
-git clone https://github.com/graniet/operative-framework.git /opt/recon
-git clone https://github.com/KyxRecon/Infoga.git /opt/recon
-git clone https://github.com/joker25000/DZGEN.git /opt/recon
+git clone https://github.com/xillwillx/skiptracer.git /opt/recon/skiptracer
+git clone https://github.com/leebaird/discover.git /opt/recon/discover
+git clone https://github.com/UnaPibaGeek/ctfr.git /opt/recon/ctfr
+git clone https://github.com/Tuhinshubhra/RED_HAWK /opt/recon/redhawk
+git clone https://github.com/1N3/Sn1per.git /opt/recon/sniper
+git clone https://github.com/LionSec/xerosploit.git /opt/recon/xerosploit
+git clone https://github.com/laramies/theHarvester.git /opt/recon/harvester
+git clone https://github.com/graniet/operative-framework.git /opt/recon/operative-framework
+git clone https://github.com/KyxRecon/Infoga.git /opt/recon/infoga
+git clone https://github.com/joker25000/DZGEN.git /opt/recon/dzgen
 
 #      WIRELESS
-git clone https://github.com/derv82/wifite2.git /opt/wireless
-git clone https://github.com/FluxionNetwork/fluxion.git /opt/wireless
-git clone https://github.com/v1s1t0r1sh3r3/airgeddon.git /opt/wireless
-git clone https://github.com/wifiphisher/wifiphisher.git /opt/wireless
-git clone https://github.com/wifiphisher/roguehostapd.git /opt/wireless
-git clone https://github.com/ArmisSecurity/blueborne.git /opt/wireless
-git clone https://github.com/Alfa100001/-CVE-2017-0785-BlueBorne-PoC.git /opt/wireless
-git clone https://github.com/ZerBea/hcxdumptool.git /opt/wireless
-git clone https://github.com/ZerBea/hcxtools.git /opt/wireless
+git clone https://github.com/derv82/wifite2.git /opt/wireless/wifite2
+git clone https://github.com/FluxionNetwork/fluxion.git /opt/wireless/fluxion
+git clone https://github.com/v1s1t0r1sh3r3/airgeddon.git /opt/wireless/airgeddon
+git clone https://github.com/wifiphisher/wifiphisher.git /opt/wireless/wifiphisher
+git clone https://github.com/wifiphisher/roguehostapd.git /opt/wireless/roguehostapd
+git clone https://github.com/ArmisSecurity/blueborne.git /opt/wireless/blueborne
+git clone https://github.com/Alfa100001/-CVE-2017-0785-BlueBorne-PoC.git /opt/wireless/blueborne-poc
+git clone https://github.com/ZerBea/hcxdumptool.git /opt/wireless/hcxdumptool
+git clone https://github.com/ZerBea/hcxtools.git /opt/wireless/hcxtools
 
 #      WEB
-git clone https://github.com/elceef/dnstwist.git /opt/web
-git clone https://github.com/thelinuxchoice/blackeye.git /opt/web
-git clone https://github.com/UltimateHackers/Striker.git /opt/web
-git clone https://github.com/Hadesy2k/sqliv.git /opt/web
+git clone https://github.com/elceef/dnstwist.git /opt/web/dnstwist
+git clone https://github.com/thelinuxchoice/blackeye.git /opt/web/blackeye
+git clone https://github.com/UltimateHackers/Striker.git /opt/web/striker
+git clone https://github.com/Hadesy2k/sqliv.git /opt/web/sqliv
 
 #      EXPLOIT
-git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit.git /opt/exploit
-git clone https://github.com/pasahitz/zirikatu.git /opt/exploit
+git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit.git /opt/exploit/eternalblue
+git clone https://github.com/pasahitz/zirikatu.git /opt/exploit/zirikatu
 
 #      OTHER
-git clone https://github.com/Mebus/cupp.git /opt
-https://github.com/CoreSecurity/impacket.git /opt
-wget https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz /opt
+git clone https://github.com/Mebus/cupp.git /opt/cupp	
+https://github.com/CoreSecurity/impacket.git /opt/impacket
+wget https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz /opt/exiftool
 
 
 #http://0xc0ffee.io/blog/OSCP-Goldmine
