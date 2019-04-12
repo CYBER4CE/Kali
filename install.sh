@@ -72,6 +72,11 @@ git clone https://github.com/pasahitz/zirikatu.git /opt/exploit/zirikatu
 git clone https://github.com/BastilleResearch/mousejack.git /opt/exploit/mousejack
 git clone https://github.com/insecurityofthings/jackit.git /opt/exploit/jackit
 git clone https://github.com/byt3bl33d3r/SILENTTRINITY.git /opt/exploit/silenttrinity
+git clone https://github.com/EmpireProject/Empire.git /opt/exploit/empire
+git clone https://github.com/trustedsec/unicorn.git /opt/exploit/unicorn
+git clone https://github.com/zerosum0x0/koadic.git /opt/exploit/koadic
+git clone https://github.com/thelinuxchoice/spykey /opt/exploit/spykey
+git clone https://github.com/KALILINUXTRICKSYT/easysploit.git /opt/exploit/easysploit
 
 #      WEB
 git clone https://github.com/elceef/dnstwist.git /opt/web/dnstwist
@@ -151,18 +156,18 @@ cd /opt/exploit
 # SILENTTRINITY
 cd /opt/exploit/silenttrinity/Server && python3.7 -m pip install -r requirements.txt
 
+# EMPIRE
+cd /opt/exploit/empire/setup && ./install.sh
 
-#KOADIC
-#UNICORN
-#EMPIRE
-#DKMC
+# KOADIC
+cd /opt/exploit/koadic && pip3 install -r requirements.txt
+
+# EASYSPLOIT
+cd /opt/exploit/easysploit && chmod +x installer.sh && ./installer.sh
+
 #CHAOS
-#EASYSPLOIT
 #PHANTOM-EVASION
-#SPYKEY
-#THE-AXER
 #VENOM
-#IMPACKET
 #ROUTERSPLOIT
 #AUTOSPLOIT
 
