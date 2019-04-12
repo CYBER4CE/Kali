@@ -5,7 +5,7 @@ chown -R www-data:www-data /var/www/html
 wget -O /root/Pictures/wallpaper.jpeg https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/episodes/7/iced-key-art/got_s7_ka.jpg/_jcr_content/renditions/cq5dam.web.1200.675.jpeg 
 wget -O /root/Pictures/lockscreen.jpeg https://wallpapercave.com/download/parrot-security-os-wallpapers-wp2071865
 
-echo deb http://http.kali.org/kali kali-rolling main non-free contrib > /etc/apt/sources.list
+echo 'deb http://http.kali.org/kali kali-rolling main non-free contrib' > /etc/apt/sources.list
 
 wget -q -O - https://archive.kali.org/archive-key.asc  | apt-key add
 apt-get upgrade -y && apt-get update -y
