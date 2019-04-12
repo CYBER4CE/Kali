@@ -86,7 +86,7 @@ wget -O /opt/shells/php/php-reverse-shell-1.0.tar.gz http://pentestmonkey.net/to
 #      OTHER
 git clone https://github.com/Mebus/cupp.git /opt/cupp	
 git clone https://github.com/CoreSecurity/impacket.git /opt/impacket
-wget -O /opt/exiftool/mage-ExifTool-10.75.tar.gz https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz
+wget -O /opt/exiftool/Image-ExifTool-10.75.tar.gz https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz
 
 
 # INSTALL
