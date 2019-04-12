@@ -32,7 +32,7 @@ mkdir /opt/enumeration/LinuxPrivChecker
 mkdir /opt/exiftool
 
 # APT PACKAGES
-apt-get install terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev mono-complete mdk4 hostapd-wpe python3-pip -y
+apt-get install python3.7 python3.7-dev python3-pip terminator seclists ipcalc python3-pip masscan bettercap php-curl php-xml inspy libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev libbluetooth-dev themole hostapd libnl-3-dev libnl-genl-3-dev mono-complete mdk4 hostapd-wpe python3-pip -y
 
 # PIP PACKAGES
 pip install shodan urlparse2
@@ -69,6 +69,9 @@ git clone https://github.com/joker25000/DZGEN.git /opt/recon/dzgen
 #      EXPLOIT
 git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit.git /opt/exploit/eternalblue
 git clone https://github.com/pasahitz/zirikatu.git /opt/exploit/zirikatu
+git clone https://github.com/BastilleResearch/mousejack.git /opt/exploit/mousejack
+git clone https://github.com/insecurityofthings/jackit.git /opt/exploit/jackit
+git clone https://github.com/byt3bl33d3r/SILENTTRINITY.git /opt/exploit/silenttrinity
 
 #      WEB
 git clone https://github.com/elceef/dnstwist.git /opt/web/dnstwist
@@ -85,7 +88,7 @@ wget -O /opt/shells/php/php-reverse-shell-1.0.tar.gz http://pentestmonkey.net/to
 
 #      OTHER
 git clone https://github.com/Mebus/cupp.git /opt/cupp	
-git clone https://github.com/CoreSecurity/impacket.git /opt/impacket
+git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
 wget -O /opt/exiftool/Image-ExifTool-10.75.tar.gz https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.75.tar.gz
 
 
@@ -140,8 +143,14 @@ cd /opt/recon/infoga && pip install -r required.txt && ./infoga.py
 # DZGEN
 cd /opt/recon/dzgen && chmod +x DZGEN && ./DZGEN
 
+# IMPACKET
+cd /opt/impacket && chmod +x setup.py && pip install -r requirements.txt && python setup.py install
 
 cd /opt/exploit
+
+# SILENTTRINITY
+cd /opt/exploit/silenttrinity/Server && python3.7 -m pip install -r requirements.txt
+
 
 #KOADIC
 #UNICORN
@@ -160,6 +169,8 @@ cd /opt/exploit
 # ZIRIKATU
 cd /opt/exploit/zirikatu && chmod +x zirikatu.sh && ./zirikatu.sh
 
+# JACKIT
+cd /opt/exploit/jackit && pip install -e .
 
 
 # ETERNALBLUE-DOUBLEPULSAR-METASPLOIT
