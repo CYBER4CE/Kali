@@ -48,11 +48,14 @@ git clone https://github.com/derv82/wifite2.git /opt/wireless/wifite2
 git clone https://github.com/FluxionNetwork/fluxion.git /opt/wireless/fluxion
 git clone https://github.com/v1s1t0r1sh3r3/airgeddon.git /opt/wireless/airgeddon
 git clone https://github.com/wifiphisher/wifiphisher.git /opt/wireless/wifiphisher
+git clone https://github.com/wifiphisher/extra-phishing-pages.git /opt/wireless/extra-phishing-pages
+git clone https://github.com/xdavidhu/mitmAP.git /opt/wireless/mitmAP
 git clone https://github.com/wifiphisher/roguehostapd.git /opt/wireless/roguehostapd
 git clone https://github.com/ArmisSecurity/blueborne.git /opt/wireless/blueborne
 git clone https://github.com/Alfa100001/-CVE-2017-0785-BlueBorne-PoC.git /opt/wireless/blueborne-poc
 git clone https://github.com/ZerBea/hcxdumptool.git /opt/wireless/hcxdumptool
 git clone https://github.com/ZerBea/hcxtools.git /opt/wireless/hcxtools
+git clone https://github.com/AresS31/wirespy.git /opt/wireless/wirespy
 
 #      RECON
 git clone https://github.com/xillwillx/skiptracer.git /opt/recon/skiptracer
@@ -123,6 +126,12 @@ cd /opt/wireless/roguehostapd && chmod +x setup.py && python setup.py install
 
 # WIFIPHISHER
 cd /opt/wireless/wifiphisher && chmod +x setup.py && python setup.py install
+
+# WIRESPY
+cd /opt/wireless/wirespy && chmod +x wirespy.sh
+
+# MITMAP
+cd /opt/wireless/mitmAP && chmod +x mitmAP.py && python3 mitmAP.py
 
 # SKIPTRACER
 cd /opt/recon/skiptracer && chmod +x skiptracer.py && pip install -r requirements.txt
