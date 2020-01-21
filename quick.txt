@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo 'deb http://http.kali.org/kali kali-rolling main non-free contrib' > /etc/apt/sources.list
+
+wget -q -O - https://archive.kali.org/archive-key.asc  | apt-key add
+apt-get upgrade -y && apt-get update -y
+
+apt install terminator seclists
+
+mkdir /opt
+mkdir /opt/lpe
+
+git clone https://github.com/Tib3rius/AutoRecon.git /opt
+pip3 install -r requirements.txt
+
+gem install evil-winrm
+# or https://github.com/Hackplayers/evil-winrm.git /opt
+
+git clone https://github.com/maurosoria/dirsearch.git /opt
+
+git clone https://github.com/samratashok/nishang.git /opt
+
+git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git /opt/lpe
+
+wget https://github.com/diego-treitos/linux-smart-enumeration/raw/master/lse.sh -O /opt/lpe/lse.sh
+
+wget http://www.securitysift.com/download/linuxprivchecker.py -O /opt/lpe/linuxprivchecker.py
+
+wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -o /opt/lpe/LinEnum.sh
+
+service postgresql start
+systemctl enable postgresql
